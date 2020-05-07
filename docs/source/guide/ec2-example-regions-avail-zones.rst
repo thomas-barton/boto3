@@ -11,7 +11,7 @@
 .. _aws-boto-ec2-example-regions-zones:
 
 ##################################################
-Describe Amazon EC2 Regions and Availability Zones
+Describe Amazon EC2 regions and availability zones
 ##################################################
 
 Amazon EC2 is hosted in multiple locations worldwide. These locations are composed of regions and 
@@ -19,7 +19,7 @@ Availability Zones. Each region is a separate geographic area. Each region has m
 locations known as Availability Zones. Amazon EC2 provides the ability to place instances and data 
 in multiple locations.
 
-The Scenario
+The scenario
 ============
 
 In this example, Python code is used to get details about regions and Availability Zones. The code uses the 
@@ -37,12 +37,12 @@ in the *Amazon EC2 User Guide for Windows Instances*.
 
 All the example code for the Amazon Web Services (AWS) SDK for Python is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/python/example_code>`_.
 
-Prerequisite Task
+Prerequisite tasks
 =================
 
 To set up and run this example, you must first configure your AWS credentials, as described in :doc:`quickstart`.
 
-Describe Regions and Availability Zones
+Describe regions and availability zones
 =======================================
 
 * Describe one or more regions that are currently available to you. 
