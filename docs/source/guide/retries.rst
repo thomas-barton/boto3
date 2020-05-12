@@ -12,7 +12,7 @@ Specifically, this guide provides details on:
 
 * How to find the available retry modes and the differences between each mode
 * How to configure your client to use each retry mode and other retry configurations
-* How to validate or check when your client performs a retry attempt
+* How to validate if your client performs a retry attempt
 
 Available retry modes
 ---------------------
@@ -45,7 +45,7 @@ Legacy mode is the default mode used by any Boto3 client you create. As its name
 
 
 .. note::
-   There are some additional service-specific retry policies. For more information, please see here (https://github.com/boto/botocore/blob/develop/botocore/data/_retry.json).
+   There are some additional service-specific retry policies. For more information, please see `here <https://github.com/boto/botocore/blob/develop/botocore/data/_retry.json>`_.
 
 
 Standard retry mode
@@ -103,7 +103,7 @@ Available configuration options
 In Boto 3, there are two retry configurations available for users to customize:
 
 * ``retry_mode`` - This tells Boto 3 which retry mode to use. As listed above, there are three retry modes available: legacy (default), standard, and adaptive. 
-* ``max_attempts`` - This provides Boto 3’s retry handler with a value of max retry attempts, where the initial call counts towards the max_attempts value that you have provided. 
+* ``max_attempts`` - This provides Boto 3’s retry handler with a value of max retry attempts, where the initial call counts towards the ``max_attempts`` value that you have provided. 
 
 Defining a retry configuration in your AWS configuration file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -115,7 +115,7 @@ This first method of defining your retry configuration is to update your global 
    max_attempts = 10
    retry_mode = standard
 
-Any Boto 3 scripts or code that use your AWS config file will inherit these configurations when using your profile, unless otherwise explicitly overwritten by a Config object when instantiating your client object at runtime. If no configuration options are set, the default retry_mode value is legacy and the default ``max_attempts`` value is 5. 
+Any Boto 3 scripts or code that use your AWS config file will inherit these configurations when using your profile, unless otherwise explicitly overwritten by a ``Config`` object when instantiating your client object at runtime. If no configuration options are set, the default retry mode value is ``legacy`` and the default ``max_attempts`` value is 5. 
 
 Defining a retry configuration in a Config object for your Boto 3 client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,7 +124,7 @@ If you do not wish to configure retry behavior globally with your AWS config fil
 
 Additionally, if your AWS configuration file is configured with retry behavior but you’d like to override those global settings, you can use the ``Config`` object to override an individual client object at runtime. 
 
-As you can see in the example below, the ``Config`` object takes a retries dictionary where we can supply our two configuration options, max_attempts and mode, and the values we want each to be:
+As you can see in the example below, the ``Config`` object takes a retries dictionary where we can supply our two configuration options, ``max_attempts`` and ``mode``, and the values we want each to be:
 
 .. code-block:: python
 
