@@ -212,7 +212,7 @@ Boto3 specific events
 Boto3 emits a set of events that users can register to
 customize clients or resources and modify the behavior of method calls.
 
-Here is the list of events that users of boto3 can register handlers to:
+Here is the list of events that users of Boto3 can register handlers to:
 
 * ``'creating-client-class``
 * ``'creating-resource-class``

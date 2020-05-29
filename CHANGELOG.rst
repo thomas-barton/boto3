@@ -2,6 +2,73 @@
 CHANGELOG
 =========
 
+1.13.13
+=======
+
+* api-change:``transcribe``: [``botocore``] Update transcribe client to latest version
+* api-change:``ec2``: [``botocore``] Update ec2 client to latest version
+* api-change:``health``: [``botocore``] Update health client to latest version
+* api-change:``chime``: [``botocore``] Update chime client to latest version
+
+
+1.13.12
+=======
+
+* api-change:``chime``: [``botocore``] Update chime client to latest version
+* api-change:``qldb``: [``botocore``] Update qldb client to latest version
+* api-change:``ec2``: [``botocore``] Update ec2 client to latest version
+* api-change:``ecs``: [``botocore``] Update ecs client to latest version
+* api-change:``dynamodb``: [``botocore``] Update dynamodb client to latest version
+* api-change:``macie2``: [``botocore``] Update macie2 client to latest version
+
+
+1.13.11
+=======
+
+* api-change:``sts``: [``botocore``] Update sts client to latest version
+* api-change:``ecr``: [``botocore``] Update ecr client to latest version
+* api-change:``glue``: [``botocore``] Update glue client to latest version
+* api-change:``cloudformation``: [``botocore``] Update cloudformation client to latest version
+
+
+1.13.10
+=======
+
+* api-change:``ec2``: [``botocore``] Update ec2 client to latest version
+* api-change:``imagebuilder``: [``botocore``] Update imagebuilder client to latest version
+
+
+1.13.9
+======
+
+* api-change:``elasticache``: [``botocore``] Update elasticache client to latest version
+* api-change:``macie2``: [``botocore``] Update macie2 client to latest version
+
+
+1.13.8
+======
+
+* api-change:``workmail``: [``botocore``] Update workmail client to latest version
+* api-change:``iotsitewise``: [``botocore``] Update iotsitewise client to latest version
+* enchancement:Endpoints: [``botocore``] Improved endpoint resolution for clients with unknown regions
+
+
+1.13.7
+======
+
+* api-change:``kendra``: [``botocore``] Update kendra client to latest version
+* api-change:``ec2``: [``botocore``] Update ec2 client to latest version
+* api-change:``codeguru-reviewer``: [``botocore``] Update codeguru-reviewer client to latest version
+
+
+1.13.6
+======
+
+* api-change:``sagemaker``: [``botocore``] Update sagemaker client to latest version
+* api-change:``guardduty``: [``botocore``] Update guardduty client to latest version
+* api-change:``resourcegroupstaggingapi``: [``botocore``] Update resourcegroupstaggingapi client to latest version
+
+
 1.13.5
 ======
 

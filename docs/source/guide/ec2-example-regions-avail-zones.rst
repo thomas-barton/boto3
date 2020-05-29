@@ -45,7 +45,7 @@ To set up and run this example, you must first configure your AWS credentials, a
 Describe regions and availability zones
 =======================================
 
-* Describe one or more regions that are currently available to you. 
+* Describe one or more Regions that are currently available to you. 
 
 * Describe one or more of the Availability Zones that are available to you. The results include zones 
   only for the region you're currently using. If there is an event impacting an Availability Zone, 
@@ -53,10 +53,10 @@ Describe regions and availability zones
 
 The example below shows how to:
  
-* Describe regions using 
+* Describe Regions using 
   `describe_regions <https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_regions>`_.
 
-* Describe AvailabilityZones using 
+* Describe Availability Zones using 
   `describe_availability_zones <https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_availability_zones>`_.
  
 Example
