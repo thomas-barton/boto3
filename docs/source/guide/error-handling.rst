@@ -36,7 +36,9 @@ These exceptions are statically defined within the botocore package, a dependenc
         if isinstance(value, type):
             print(key)
 
-This produces a list of statically defined botocore exceptions::
+This produces a list of statically defined botocore exceptions:
+
+.. code-block::
 
     AliasConflictParameterError
     ApiVersionNotFoundError

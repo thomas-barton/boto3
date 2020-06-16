@@ -28,6 +28,7 @@ General feature guide
    session
    error-handling
    retries
+   credentials
    configuration
    events
 
