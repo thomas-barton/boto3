@@ -5,26 +5,34 @@ Configuration
 
 Overview
 ---------
-In general, Boto3 follows the same approach used in credential lookup when doing configuration lookup. It will try various locations until a value is found. Boto3 uses these sources for configuration lookup:
+Boto3 looks at various configuration locations until values are found. Boto3 adheres to the follwoing lookup order when searching through sources for configuration values:
 
 * Creating a ``Config`` object and passing it as the config parameter when creating a client.
 * Environment variables
 * The ``~/.aws/config`` file.
 
+.. note::
+
+    Configurations are not wholly atomic. This means configuration values set in your AWS config file can be singularly overwritten by setting a specific environment variable or through the use of a ``Config`` object.
+
+.. note::
+
+    Credential configuration is covered in detail in the :ref:`guide_credentials` guide. 
+
+
 Using the Config object
 -------------------------
-Generally, this option is for configuring client object-specific configurations that will affect the behavior of your specific client object only. However, there are options used here that will supersede those found in other configuration locations:
+This option is for configuring client-specific configurations that will affect the behavior of your specific client object only. As noted earlier, there are options used here that will supersede those found in other configuration locations:
 
-
-* ``region_name`` (string) - The AWS Region used in instantiating the client. If used, this will take precedence over environment variable and configuration file values, but will not overwrite a ``region_name`` value explicitly passed to individual service methods.
-* ``signature_version`` (string) - The signature version used when signing requests. Please note, that the default version is signature version 4. If using a pre-signed URL, you should specify signature version 2. 
+* ``region_name`` (string) - The AWS Region used in instantiating the client. If used, this will take precedence over environment variable and configuration file values, but will not overwrite a ``region_name`` value *explicitly* passed to individual service methods.
+* ``signature_version`` (string) - The signature version used when signing requests. Please note that the default version is signature version 4. If using a pre-signed URL, you should specify signature version 2. 
 * ``s3`` (related configurations; dictionary) - AWS S3 service specific configurations; see the `Config reference <https://botocore.amazonaws.com/v1/documentation/api/latest/reference/config.html>`_ for further details.
 * ``retries`` (dictionary) - Client retry behavior configuration options that include retry mode, and maximum retry attempts. See the :ref:`guide_retries` guide for more details.  
 
 
 There are additional options beyond those listed above, for more information or for a complete list of options, please see the see the `Config reference <https://botocore.amazonaws.com/v1/documentation/api/latest/reference/config.html>`_ for further details.
 
-To set these configuration options, you can create a ``Config`` object with the options you desire and then pass them into your client:
+To set these configuration options, create a ``Config`` object with the options you desire and then pass them into your client:
 
 .. code-block:: python
 

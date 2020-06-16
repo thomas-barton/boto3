@@ -6,7 +6,7 @@ Credentials
 Overview
 ---------
 
-Boto3 can be configured in multiple ways. Regardless of the source or sources that you choose, you *must* have both AWS credentials and an AWS Region set in order to make requests.
+Boto3 credentials can be configured in multiple ways. Regardless of the source or sources that you choose, you *must* have both AWS credentials and an AWS Region set in order to make requests.
 
 
 Interactive configuration
@@ -26,7 +26,7 @@ Configuring credentials
 
 There are two types of configuration data in Boto3: credentials and non-credentials. Credentials include items such as ``aws_access_key_id``, ``aws_secret_access_key``, and ``aws_session_token``. Non-credential configuration includes items such as which region to use or which addressing style to use for Amazon S3. For more information on how to configure non-credential configurations, see the :ref:`guide_configuration` guide.
 
-Boto3 will look in several additional locations when searching for credentials. The mechanism in which Boto3 looks for credentials is to search through a list of possible locations and stop as soon as it finds credentials. The order in which Boto3 searches for credentials is:
+Boto3 will look in several locations when searching for credentials. The mechanism in which Boto3 looks for credentials is to search through a list of possible locations and stop as soon as it finds credentials. The order in which Boto3 searches for credentials is:
 
 #. Passing credentials as parameters in the ``boto.client()`` method
 #. Passing credentials as parameters when creating a ``Session`` object
@@ -43,7 +43,7 @@ Each of those locations is discussed in more detail below.
 Passing credentials as parameters
 ----------------------------------
 
-There are valid use cases for providing credentials to the ``client()`` method and Session object, these include:
+There are valid use cases for providing credentials to the ``client()`` method and ``Session`` object, these include:
 
 * Retrieving temporary credentials using AWS STS (such as ``sts.get_session_token()``).
 * Loading credentials from some external location, e.g the OS keychain.
@@ -78,7 +78,7 @@ The second option for providing credentials to Boto3 is passing them as paramete
 
 .. warning:: 
 
-    ``ACCESS_KEY``, ``SECRET_KEY``, and ``SESSION_TOKEN`` are variables that contain your access key, secret key, and optional session token. Note that the examples above do not have hard coded credentials. We do not recommend hard coding credentials in your source code. 
+    ``ACCESS_KEY``, ``SECRET_KEY``, and ``SESSION_TOKEN`` are variables that contain your access key, secret key, and optional session token. Note that the examples above do not have hard coded credentials. We do **not** recommend hard coding credentials in your source code. 
 
 
 Environment variables
@@ -180,7 +180,7 @@ If MFA authentication is not enabled then you only need to specify a ``role_arn`
 
 When you specify a profile that has an IAM role configuration, Boto3 will make an ``AssumeRole`` call to retrieve temporary credentials. Subsequent Boto3 API calls will use the cached temporary credentials until they expire, in which case Boto3 will then automatically refresh the credentials. 
 
-Please note that Boto3 does not write these temporary credentials to disk. This means that temporary credentials from the ``AssumeRole`` calls are only cached in-memory within a single Session. All clients created from that session will share the same temporary credentials.
+Please note that Boto3 does not write these temporary credentials to disk. This means that temporary credentials from the ``AssumeRole`` calls are only cached in-memory within a single session. All clients created from that session will share the same temporary credentials.
 
 If you specify ``mfa_serial``, then the first time an ``AssumeRole`` call is made, you will be prompted to enter the MFA code. **Program execution will block until you enter the MFA code.** You'll need to keep this in mind if you have an ``mfa_serial`` device configured, but would like to use Boto3 in an automated script.
 
